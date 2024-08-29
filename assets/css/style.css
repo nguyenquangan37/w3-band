@@ -1,0 +1,413 @@
+/* Reset CSS - Loại bỏ padding và margin mặc định của tất cả các phần tử, đảm bảo tất cả đều bắt đầu từ 0. */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* Đảm bảo padding và border được bao gồm trong kích thước tổng của phần tử. */
+}
+
+/* clear{
+    clear: both;
+} */
+
+/* Cài đặt font chữ mặc định cho toàn bộ trang web. */
+html{
+    font-family: "Lato", sans-serif;
+    font-size: 15px;
+    line-height: 1.5; /*dat kc mac ding cho cac dong*/
+}
+
+/* Khu vực chính của trang. */
+#main{
+
+}
+
+/* Phần header của trang web. */
+#header{
+    position: fixed; /*sau position thuong dung top,left,right,bottom để xđvtri so voi trinh duyet */
+    /* co the dung widght=100% */
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 46px; /* Đặt chiều cao của header. */
+    background-color: black; /* Đặt màu nền cho header là màu đen. */
+    z-index: 1;
+}
+
+/* Phần điều hướng (navigation) của trang web. */
+#nav{
+
+}
+
+/* Mỗi mục trong danh sách điều hướng. */
+#nav li{
+    display: inline-block; /* Hiển thị các mục trong danh sách theo hàng ngang. */
+    position: relative; /* Thiết lập vị trí tương đối để có thể sử dụng các phần tử con với vị trí tuyệt đối. */
+}
+
+/* Liên kết chính trong danh sách điều hướng. */
+#nav > li > a{
+    color:white; /* Màu chữ của liên kết là màu trắng. */
+    text-transform: uppercase;
+}
+
+/* Các liên kết trong điều hướng. */
+#nav li a{
+    /* line-height: Điều chỉnh khoảng cách giữa các dòng văn bản trong một phần tử. */
+    /* height: Xác định chiều cao tổng thể của một phần tử, bao gồm cả phần tử chứa văn bản, hình ảnh, hoặc các nội dung khác.  */
+    text-decoration: none; /* Loại bỏ gạch chân mặc định của liên kết. */
+    line-height: 46px; /* Căn chỉnh chiều cao của văn bản với chiều cao của header  */
+    padding: 0 24px; /* Thêm khoảng cách ngang giữa các liên kết. */
+    display: inline-block; /* Hiển thị các liên kết theo dòng khối. */
+}
+
+/* Thay đổi màu chữ và nền khi di chuột qua mục điều hướng. */
+#nav >li:hover> a{
+    color: #000; /* Màu chữ chuyển sang đen. */
+    background-color: #ccc; /* Màu nền chuyển sang màu xám nhạt. */
+}
+/* khi hover vào li thì áp css vào subnav */
+#nav li:hover .subnav{
+    display: inline-block; /* nếu có absolute thì block và inline-block cho kq giống nhau*/
+}
+/* Dropdown menu trong điều hướng. */
+#nav .subnav{
+    display: none; 
+    position: absolute; /* Đặt menu con ở vị trí tuyệt đối so với mục điều hướng cha. */
+    background-color: white; /* Màu nền của menu con là màu trắng. */
+    top: 100%; /* Đặt phần tử con này ngay dưới phần tử cha, với cạnh trên của nó trùng với cạnh dưới của phần tử cha. */
+    left: 0px; /* Căn trái phần tử này với cạnh trái của phần tử cha, tức là không có khoảng cách từ cạnh trái. */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+/* Liên kết trong dropdown menu. */
+#nav .subnav a{
+    color: black; /* Màu chữ của liên kết trong menu con là màu đen. */
+    min-width: 160px;
+    line-height: 38px;
+    padding: 0 16px;
+}
+
+/* Thay đổi màu nền khi di chuột qua mục trong dropdown menu. */
+#nav .subnav li:hover{
+    background-color: #ccc; /* Màu nền chuyển sang màu xám nhạt khi hover. */
+}
+
+#nav .down-btn{
+    font-size: 12px;
+    color: red;
+}
+#nav .search-btn{
+    color: white;
+    line-height: 46px;
+    float: right;
+    padding: 0px 23px;
+}
+#nav .search-btn:hover{
+    background-color: #f44336;
+    cursor: pointer;
+}
+/* Phần slider (trình chiếu hình ảnh) của trang web. */
+#slider{
+    position: relative;
+    margin-top: 46px;
+    padding-top: 50%; /*đặt kích thước cố định cho slider*/
+    background: url(/assets/img/chicago.jpg) no-repeat top center / cover; 
+}
+#slider .ad-text{
+    color: white;
+    position: absolute;
+    bottom: 47px;
+    /* C1:CAN GIUA */
+    width: 100%;
+    /*C2: left: 50%; */
+    /* transform: translateX(-50%); dịch chuyển phần tử theo trục X (ngang) về phía bên trái một khoảng bằng 50% chiều rộng của chính phần tử đó. */
+    text-align: center;
+}
+#slider .text1{
+    font-weight: 500;/*Điều chỉnh độ dày của chữ.*/
+    font-size: 24px;
+}
+#slider .text2{
+    /* do dùng thẻ b có diplay là inline nên margin-top không hoạt động */
+    display: inline-block;
+    margin-top: 25px;
+}
+/* Phần nội dung chính của trang web. */
+#content{
+
+}
+/* Phan section */
+#content .content-section{
+    text-align: center;
+    width: 800px;
+    margin: 0 auto; /*can deu hai ben*/
+    padding: 64px 16px;
+}
+#content .content-section .content-heading{
+    text-transform: uppercase;
+    margin: 10px 0;
+    font-weight: 500;
+    font-size: 30px;
+    letter-spacing: 5px; /*KC giua cac ki tu trong chu*/
+}
+#content .content-section .content-slogan{
+    margin: 15px 0;
+    opacity: 0.6; /*lam mo chu*/
+    font-style: italic; /*in nghieng*/
+}
+/* phan about */
+#content .content-section .about-content{
+    margin: 15px 0;
+    text-align: justify
+}
+#content .allmember{
+    overflow: hidden; /* Clear float */
+}
+#content .allmember .member-box{
+    float: left; /*can cac phan tu trai hoac co the dung inline-block*/
+    width: 33.3333%;
+}
+#content .allmember .member-box .name-member{
+    margin: 15px 0;
+}
+#content .allmember .member-box img{
+    width: 60%;
+    margin-bottom: 15px;
+    border-radius: 5px; /*bo tron goc anh*/
+}
+/* phan tour */
+#content #tour{
+    background-color: #000;
+}
+#content #tour .content-section{
+    color: white;
+}
+#content #tour .content-section .date-box{
+    background-color: #fff;
+}
+#content #tour .content-section .months{
+    color: #000;
+    list-style-type: none;
+}
+#content #tour .content-section .months li{
+    text-align: left;
+    padding: 8px 16px;
+    border-bottom: 1px solid #ddd; /*vien day 1px net lien mau dđ*/
+}
+#content #tour .content-section .months li .Sold-out{
+    background-color: red;
+    color: white;
+    padding: 0 8px;
+    margin-left: 16px;
+}
+#content #tour .content-section .months li .quantity{
+    background-color: #000;
+    color: white;
+    margin-right: 16px;
+    padding: 0 8px;
+    border-radius: 50%; /*hinh tron*/
+    float: right;
+}
+/* phan ticket */
+.tickets{
+    margin: 32px -8px; /*margin âm*/
+    overflow: hidden;
+}
+#content .content-section .tickets .place{
+    float: left;
+    width: 33.33333%;
+    color: #000;
+    padding: 0 8px;
+}
+#content .content-section .tickets .place:last-child{
+    margin-right: 0;
+}
+.tickets .place img{
+    /*the img la 1 the inline(hoac inline-block) co kc nho giua chung va cac pt khac nen dung block de loai bo no*/
+    display: block; 
+    width: 100%;
+}
+#content .content-section .tickets .place .buy-tickets{
+    background-color: white;
+    padding: 15px 16px;
+    text-align: left;
+}
+.buy-tickets b,.buy-tickets p,.buy-tickets button{
+    margin-top: 15px;
+    font-size: 15px;
+}
+#content .content-section .tickets .place .buy-tickets .dates{
+    opacity: 0.6;
+}
+#content .content-section .tickets .place .buy-tickets button{
+    background-color: #000;
+    color: white;
+    padding: 8px 16px;
+}
+/* phan contact */
+.contact{
+    padding: 32px 0px;
+    position: relative;
+    height: 230px;
+}
+.contact-band{
+    text-align: left;
+    width: 50%;
+}
+.contact-band i{
+    width: 30px;
+    height: 18px;
+}
+.contact .input-infomation{
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 32px 0px;
+}
+.contact .input-infomation input{
+    padding: 8px;
+    border: 1px solid black;
+    height: 41px;  
+}
+.contact .input-infomation .info1{
+    padding: 0 8px;
+    margin-bottom: 8px;
+}
+.contact .input-infomation input .Message{
+    width: 100%;
+}
+.contact .input-infomation .Name{
+    width: 49%;
+    float: left;
+}
+.contact .input-infomation .Email{
+    width: 49%;
+    float: right;
+}
+.contact .contact-band i{
+    font-size: 24px;
+}
+.Message{
+    margin-top: 8px;
+    width: 100%;
+}
+.input-infomation button{
+    margin: 16px 0px;
+    padding: 8px 16px;
+    background-color: #000;
+    color: white;
+    float: right;
+    font-size: 15px;
+}
+.map{
+    padding-top: 50%; /*đặt kích thước cố định cho slider*/
+    background: url(/assets/img/map.jpg) no-repeat top center / cover;
+}
+/* Phần footer của trang web. */
+#footer{
+    padding: 64px 16px;
+    text-align: center;
+    opacity: 0.6;
+    color: #000;
+}
+#footer i{
+    font-size: 24px;
+}
+#footer p{
+    margin: 15px 0;
+}
+/* phan modal */
+/* mo modal */
+.modal.open{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.modal{
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    padding-top: 100px;
+    display: none; /*de modal mac dinh la dong*/
+}
+.modal-container{
+    color: white;
+    width: 900px;
+    max-width: calc(100% - 32px);
+}
+.modal .modal-header{
+    position: relative;
+    background-color: #009688;
+    padding: 32px 16px;
+}
+.modal .modal-ticket{
+    font-size: 30px;
+    width: 100%;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal .header-icon{
+    margin-right: 15px;
+}
+.modal-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 8px 16px;
+    font-size: 24px !important; /*them important de font-size hd do the i do bi ghi de */
+}
+.modal-close:hover,.modal-content button:hover,.buy-tickets button:hover,.input-infomation button:hover{
+    background-color: #ccc !important;
+    color: #000 !important;
+    cursor: pointer;
+}
+.modal-content{
+    background-color: white;
+    height: auto;
+    color: #000;
+}
+.modal-content form{
+    padding: 15px 16px;
+    overflow: hidden;
+}
+.modal-content form div{
+    margin-bottom: 15px;
+}
+/* .modal-content form div:last-child{
+    margin-bottom: 0; là sai
+    Sẽ ko hoạt động do thẻ div ko phải là thì cuối cùng của form mà là thẻ p
+} */
+
+ /*dùng last-of-type cho đúng loại thẻ cuối cùng hoặc nth-child(3) cho phần tử div thứ 3  */
+.modal-content form div:last-of-type{
+    margin-bottom: 0;
+}
+.modal-content input{
+    width: 100%;
+    padding: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.modal-content button{
+    width: 100%;
+    background-color: #009688;
+    margin: 16px 0px;
+    padding: 16px;
+    border: 0;
+    color: white;
+    font-size: 15px;
+    font-family: "Lato", sans-serif;
+}
+.modal-content p{
+    float: right;
+    margin: 15px 0;
+}
+.modal-content a{
+    color: #009688;;
+}
