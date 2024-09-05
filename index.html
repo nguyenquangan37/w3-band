@@ -14,14 +14,9 @@
     <div id="main">
         <div id="header">
             <ul id="nav">
-                <li><a href="#slider">Home</a></li> 
+                <li><a href="#slider">Home</a></li>
                 <li>
                     <a href="#about">Band</a>
-                    <ul class="subnav">
-                        <li><a href="#">abc</a></li>
-                        <li><a href="#">xyz</a></li>
-                        <li><a href="#">bcd</a></li>
-                    </ul>
                 </li>
                 <li><a href="#tour">Tour</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -62,20 +57,22 @@
                         labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                         laboris nisi ut aliquip ex ea commodo consequat.
                     </p>
-                    <div class="allmember">
-                        <div class="member-box">
+                    <div class="row ">
+                        <div class="col col-third member-box">
                             <p class="name-member">Name</p>
                             <img src="/assets/img/bandmember.jpg" alt="">
                         </div>
-                        <div class="member-box">
+                        <div class="col col-third member-box">
                             <p class="name-member">Name</p>
                             <img src="/assets/img/bandmember.jpg" alt="">
                         </div>
-                        <div class="member-box">
+                        <div class="col col-third member-box">
                             <p class="name-member">Name</p>
                             <img src="/assets/img/bandmember.jpg" alt="">
                         </div>
+
                     </div>
+
                 </div>
             </div>
             <!--Tour dates-->
@@ -91,8 +88,8 @@
                         </ul>
                     </div>
                     <!--phan tickets-->
-                    <div class="tickets">
-                        <div class="place">
+                    <div class="row tickets">
+                        <div class="col col-third ">
                             <img src="/assets/img/newyork.jpg" alt="">
                             <div class="buy-tickets">
                                 <b>New York</b>
@@ -101,7 +98,7 @@
                                 <button class="js-buy-ticket">Buy Tickets</button>
                             </div>
                         </div>
-                        <div class="place">
+                        <div class="col col-third ">
                             <img src="/assets/img/paris.jpg" alt="">
                             <div class="buy-tickets">
                                 <b>Paris</b>
@@ -110,7 +107,7 @@
                                 <button class="js-buy-ticket">Buy Tickets</button>
                             </div>
                         </div>
-                        <div class="place">
+                        <div class="col col-third ">
                             <img src="/assets/img/sanfran.jpg" alt="">
                             <div class="buy-tickets">
                                 <b>San Francisco</b>
@@ -119,7 +116,9 @@
                                 <button class="js-buy-ticket">Buy Tickets</button>
                             </div>
                         </div>
+
                     </div>
+
                 </div>
             </div>
             <!--Contact-->
@@ -127,21 +126,25 @@
                 <div class="content-section">
                     <h2 class="content-heading">Contact</h2>
                     <p class="content-slogan">Fan? Drop a note!</p>
-                    <div class="contact">
-                        <div class="contact-band">
+                    <div class="row contact-section">
+                        <div class="col col-half contact-info">
                             <p><i class="fa fa-map-marker"></i>Chicago, US</p>
-                            <br>
                             <p><i class="fa fa-phone"></i>Phone: +00 151515</p>
-                            <br>
                             <p><i class="fa fa-envelope"></i>Email: mail@mail.com</p>
                         </div>
-                        <div class="input-infomation">
-                            <div class="infor1">
-                                <input type="text" class="Name" placeholder="Name">
-                                <input type="text" class="Email" placeholder="Email">
-                            </div>
-                            <input type="text" class="Message" placeholder="Message">
-                            <button>Send</button>
+                        <div class="col col-half">
+                            <form action="">
+                                <div class="col col-half">
+                                    <input type="text" class="input-info" required placeholder="Name">
+                                </div>
+                                <div class="col col-half">
+                                    <input type="email" class="input-info" required placeholder="Email">
+                                </div>
+                                <div class="col col-full">
+                                    <input type="text" class="input-info" required placeholder="Message">
+                                </div>
+                                <button class="send-btn" type="submit">SEND</button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -170,14 +173,14 @@
                 <i class="modal-close fa fa-close js-modal-close"></i>
             </header>
             <div class="modal-content">
-                <form action="">
+                <form class="row" action="">
                     <div>
                         <label>
                             <i class="fa fa-shopping-cart"></i>
                             Tickets, $15 per person
                         </label>
                     </div>
-                    <div><input type="text" placeholder="How many?"></div>
+                    <div><input type="text" required placeholder="How many?"></div>
                     <div>
                         <label>
                             <i class="fa fa-user"></i>
@@ -185,7 +188,7 @@
                         </label>
                     </div>
                     <div>
-                        <input type="text" placeholder="Enter email">
+                        <input type="text" required placeholder="Enter email">
                     </div>
                     <button>
                         Pay
